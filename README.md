@@ -55,3 +55,45 @@ On Windows, use Run > dxdiag. This brings up the DirectX Diagnostic Tool. What m
 CUDA SDK 11.3 supports both of my GPUs.
 
 The command prompt command to check if the toolkit installed properly is "nvcc --version"
+
+### 1.5 - Basic Elements of a CUDA Program
+
+Each CUDA program has the following basic elements.
+
+- Initialize data from CPU.
+- Transfer data from CPU context to GPU context.
+- Kernel launch with needed grid/block size.
+- Transfer results back to CPU context from GPU context.
+- Reclaim the memory from both CPU and GPU.
+
+CUDA code has code that runs on CPU (host code - main function) and code that runs on the GPU (device code).
+
+```cpp
+// '__global__' keyword at the beginning of a function indicates that this is a GPU kernel function.
+```
+
+To call kernel function, use kernel launch parameters with 3 angle brackets. 
+
+```cuda
+myFunction<<<numBlocks, numberThreadsPerBlock>>>(functionParameters);
+```
+
+**Synchronizing host and device code**
+
+It is important to note that CUDA kernels are **asynchronous** function calls. This means that the following host code will continue running before the GPU has finished the kernel execution. The function "cudaDeviceSynchronize()" blocks the host program execution until the GPU kernel is complete. 
+
+**Grid & Block**
+
+Grid - Collection of all the threads launched for a kernel.
+
+Block - Threads in a grid is organized into groups called thread blocks.
+
+dim3 variableName(X, Y, Z) is a class with X, Y, and Z parameters.
+
+Instead of using integers as inputs to the kernel parameters, you can use dim3 type variables to define 3 dimensional grids.
+
+**Limitations for block size**
+
+For a thread block, we can have a max of 1024 X and Y dimensions. We can only have 64 for Z dimension. The max number of threads per block is 1024, so X * Y * Z <= 1024.
+
+# TODO: Where does thi limitation above come from?
