@@ -3,14 +3,14 @@ CUDA Parallel Programming masterclass on Udemy.
 
 # Table of Contents
 
-- [Section 1.2 - Introduction to Parallel Programming](#1.2-introduction-to-parallel-programming)
-- [Section 1.3 - Supercomputing](#1.3-supercomputing)
-- [Section 1.4 - First Look at CUDA Programming](#1.4-first-look-at-cuda-programming)
-- [Section 1.5 - Basic Elements of a CUDA Program](#1.5-basic-elements-of-a-cuda-program)
+- [Section 1.2 - Introduction to Parallel Programming](#introduction-to-parallel-programming)
+- [Section 1.3 - Supercomputing](#supercomputing)
+- [Section 1.4 - First Look at CUDA Programming](#first-look-at-cuda-programming)
+- [Section 1.5 - Basic Elements of a CUDA Program](#basic-elements-of-a-cuda-program)
 
 # Section 1
 
-## 1.2 - Introduction to Parallel Programming
+## Introduction to Parallel Programming
 
 - Task Level vs Data Level Parallelism
   - Task Level: Differrent task on same or different data.
@@ -19,7 +19,7 @@ CUDA Parallel Programming masterclass on Udemy.
   - Parallelism: We have enough cores for multiple processes to run at the same time.
   - Concurrency: Time multiplexing allows "context" of each task to be changed and some incremental amount of work is completed for each task sequentially (this looks parallel to the human eye).
 
-## 1.3 - Supercomputing
+## Supercomputing
 
 Performance of a supercomputer is measured using Floating Point Operations (FPU).
 
@@ -39,7 +39,7 @@ Heterogeneous computer
 - Use more than one kind of processor or cores.
 - Gain performance or energy efficiency by adding specialized / dissimilar coprocessors that can handle particular tasks.
 
-## 1.4 - First Look at CUDA Programming
+## First Look at CUDA Programming
 
 CUDA (Compute Unified Device Architecture) is a parallel computing platform and API model created by Nvidia. Enables us to use Nvidia GPU for general purpose computing (GPGPU - General Purpose Computing in Graphic Processing Unit).
 
@@ -63,7 +63,7 @@ CUDA SDK 11.3 supports both of my GPUs.
 
 The command prompt command to check if the toolkit installed properly is "nvcc --version"
 
-## 1.5 - Basic Elements of a CUDA Program
+## Basic Elements of a CUDA Program
 
 Each CUDA program has the following basic elements.
 
